@@ -7,16 +7,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="global.css">
 </head>
+<header>
+    <ul>
+        <li><a href="javascript:void(0)" data-page="heart.html">Heart</a></li>
+        <li><a href="javascript:void(0)" data-page="text_anim.html">Text Animation</a></li>
+    </ul>
+</header>
 
 <body>
     <div id="imported-content"></div>
+
     <script>
-        fetch('/heart/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('imported-content').innerHTML = data;
+        // Function to load content dynamically
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('imported-content').innerHTML = data;
+                })
+                .catch(error => {
+                    document.getElementById('imported-content').innerHTML = '<p>Error loading page</p>';
+                    console.error('Error:', error);
+                });
+        }
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const page = this.getAttribute('data-page');
+                loadPage(page);
             });
+        });
+
+        // Optionally, load the default page when the site is loaded
+        loadPage('text_anim.html');
     </script>
+    <!-- <script src="main.js"></script> -->
 </body>
 
 </html>
