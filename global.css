@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    /* width: 100vw; */
+    background: #262626;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #ccc;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    color: #eee;
+    gap: 1.5rem;
+
+    a {
+        text-decoration: none;
+        color: unset;
+        padding: .5rem 1rem;
+        transition: all .3s ease-in-out;
+        border-radius: 4px;
+
+        &:hover {
+            background: #ccc;
+            color: #262626;
+        }
+    }
+}
