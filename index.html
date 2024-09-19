@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <div id="imported-content"></div>
+    <script>
+        fetch('/heart/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('imported-content').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>
