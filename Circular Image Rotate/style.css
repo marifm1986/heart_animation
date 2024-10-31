@@ -1,0 +1,100 @@
+:root {
+    --i: 0
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw;
+    height: 100vh; */
+    overflow: hidden;
+
+}
+
+.container {
+    &:hover {
+
+        .box,
+        img {
+            animation-play-state: paused;
+        }
+
+    }
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: animate 15s linear infinite;
+}
+
+.centerImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    width: 50%;
+    object-fit: cover;
+    translate: -50% -50%;
+
+
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: -50%;
+    cursor: pointer;
+
+}
+
+.imgBx {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff, 0 5px 10px rgba(0, 0, 0, .15);
+    transform: rotate(calc(360deg / 8 * var(--i)));
+    transform-origin: 190px;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: rotate(calc(-360deg / 8 * var(--i)));
+    animation: animateImgBx 15s linear infinite;
+
+}
+
+@keyframes animateImgBx {
+    0% {
+        rotate: 0deg;
+    }
+
+    0% {
+        rotate: 360deg;
+    }
+}
