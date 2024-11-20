@@ -13,3 +13,7 @@ function addNewImages() {
         imageContainer.appendChild(newImg)
     }
 }
+
+function printPreview() {
+    window.print();
+  }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Text</title>
+</head>
+
+<body>
+    <input type="text" id="txt" placeholder="search">
+    <p id="para">The interim government will not permit the "fascist" Awami League to hold protests in Bangladesh
+        tomorrow, said Chief Adviser's Press Secretary Shafiqul Alam.</p>
+
+    <script>
+        document.getElementById('txt').oninput = () => {
+            const p = document.getElementById('para');
+            // const reg = new RegExp('/[.*+?^${}()|[\]\\]/g', '\\$&');
+            p.innerHTML = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        }
+    </script>
+
+</body>
+
+</html>

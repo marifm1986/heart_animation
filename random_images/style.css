@@ -38,3 +38,32 @@ body {
         opacity: .9;
     }
 }
+
+
+
+@page :right {
+    @bottom-left {
+      content: "My book";
+      font-size: 9pt;
+      color: #333;
+    }
+  }
+
+  @page :right {  
+    @bottom-right {  
+      content: counter(page);  
+    }
+  }
+  
+  @page :left {
+    @bottom-left {
+      content: counter(page);
+    }
+  }
+
+  @page {
+    margin: 1in;
+  }
+  @page :first {
+    margin: 0;
+  }
