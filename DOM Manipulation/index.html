@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- <h1 id="main-heading">Favourite Movie Franchise</h1>
-        <ul>
-            <li class="list-items">The Matrix</li>
-            <li class="list-items">Star Wars</li>
-            <li class="list-items">Harry Potter</li>
-            <li class="list-items">Lord of the Rings</li>
-            <li class="list-items">Marvel</li>
-        </ul> -->
+    <!-- <h1 id="main-heading">Favourite Movie Franchise</h1>
+    <ul>
+        <li class="list-items">The Matrix</li>
+        <li class="list-items">Star Wars</li>
+        <li class="list-items">Harry Potter</li>
+        <li class="list-items">Lord of the Rings</li>
+        <li class="list-items">Marvel</li>
+    </ul> -->
+    <!-- <div class="container">
 
         <div class="header">
             <h2>Javascript Quote Generator</h2>
@@ -34,8 +34,24 @@
             </div>
         </div>
     </div>
+ -->
+
+    <template id="my-card">
+        <div class="card">
+            <div class="title">Title</div>
+            <div class="subtitle">Title</div>
+        </div>
+    </template>
+
+    <div class="card_container">
+        <my-card title="Silver Card" subtitle="This is a silver card"></my-card>
+        <my-card title="Gold Card" subtitle="This is a Gold card"></my-card>
+        <my-card title="Platinum Card" subtitle="This is a Platinum card"></my-card>
+        <my-card title="" subtitle=""></my-card>
+    </div>
 
 
+    <script src="my-card.js"></script>
     <script src="script.js"></script>
 </body>
 

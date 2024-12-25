@@ -42,3 +42,4 @@ btn.addEventListener("click", function () {
     person.innerText = quotes[random].person
 
 })
+
