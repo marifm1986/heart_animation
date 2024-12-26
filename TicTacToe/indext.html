@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tak Toe</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: #262626;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .2rem;
+    }
+
+    .btn {
+        width: 100px;
+        height: 100px;
+        background: powderblue;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 2rem;
+        font-weight: 600;
+
+        &:hover {
+            background: rgb(133, 194, 202);
+        }
+    }
+</style>
+
+<body>
+
+    <h1>Restart</h1>
+    <div class="main">
+        <button class="btn" id="btn1"></button>
+        <button class="btn" id="btn2"></button>
+        <button class="btn" id="btn3"></button>
+        <button class="btn" id="btn4"></button>
+        <button class="btn" id="btn5"></button>
+        <button class="btn" id="btn6"></button>
+        <button class="btn" id="btn7"></button>
+        <button class="btn" id="btn8"></button>
+        <button class="btn" id="btn9"></button>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let btn3 = document.getElementById('btn3');
+        let btn4 = document.getElementById('btn4');
+        let btn5 = document.getElementById('btn5');
+        let btn6 = document.getElementById('btn6');
+        let btn7 = document.getElementById('btn7');
+        let btn8 = document.getElementById('btn8');
+        let btn9 = document.getElementById('btn9');
+
+        let change = 'X';
+        win_check = () => {
+            if (btn1.innerText == btn2.innerText && btn1.innerText == btn3.innerText && btn1.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn4.innerText == btn5.innerText && btn4.innerText == btn6.innerText && btn4.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn7.innerText == btn8.innerText && btn7.innerText == btn9.innerText && btn7.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn1.innerText == btn5.innerText && btn1.innerText == btn9.innerText && btn1.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn3.innerText == btn5.innerText && btn3.innerText == btn7.innerText && btn3.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn1.innerText == btn4.innerText && btn1.innerText == btn7.innerText && btn1.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn2.innerText == btn5.innerText && btn2.innerText == btn8.innerText && btn2.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+            if (btn3.innerText == btn6.innerText && btn3.innerText == btn9.innerText && btn3.innerText != '') {
+                alert('Player ' + change + ' Wins');
+            }
+       
+            
+        }
+        change_chance = () => {
+            if (change === 'X') {
+                change = 'O';
+            } else {
+                change = 'X';
+            }
+
+        }
+
+        btn1.onclick = () => {
+            btn1.innerText = change;
+            win_check();
+            change_chance();
+
+        }
+        btn2.onclick = () => {
+            btn2.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn3.onclick = () => {
+            btn3.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn4.onclick = () => {
+            btn4.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn5.onclick = () => {
+            btn5.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn6.onclick = () => {
+            btn6.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn7.onclick = () => {
+            btn7.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn8.onclick = () => {
+            btn8.innerText = change;
+            win_check();
+            change_chance();
+        }
+        btn9.onclick = () => {
+            btn9.innerText = change;
+            win_check();
+            change_chance();
+        }
+
+        let btnRestart = document.querySelector('h1');
+        btnRestart.onclick = () => {
+            btn1.innerText = '';
+            btn2.innerText = '';
+            btn3.innerText = '';
+            btn4.innerText = '';
+            btn5.innerText = '';
+            btn6.innerText = '';
+            btn7.innerText = '';
+            btn8.innerText = '';
+            btn9.innerText = '';
+        }
+
+
+
+    </script>
+</body>
+
+</html>
