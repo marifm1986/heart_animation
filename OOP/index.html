@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            getInfo() {
+                return (
+                    `The name of the animal is ${this.name} and age is ${this.age}` //template literals
+                )
+            }
+        }
+
+        // inheritance
+
+        class Dog extends Animal {
+            constructor(name, age, bread) {
+                super(name, age);
+                this.bread = bread;
+            }
+
+            bark() {
+                return 'wof wof';
+            }
+        }
+        class Cat extends Animal {
+            constructor(name, age, weight) {
+                super(name, age);
+                this.weight = weight;
+            }
+        }
+
+        const firstAnimal = new Animal('Dog', 5);
+        const firstAnimal2 = new Animal('Tiger', 10);
+        console.log(firstAnimal.getInfo()) //The name of the animal is Dog and age is 5
+        console.log(firstAnimal2.getInfo) //The name of the animal is Tiger and age is 10
+
+        const myDog = new Dog('Tommy', 5, 'Germen Shephard');
+        console.log(myDog.getInfo()) //The name of the animal is Tommy and age is 5
+        console.log(myDog.bread) //Germen Shephard
+        console.log(myDog.bark()) //wof wof
+
+
+        //Encapsulation
+        class Cat extends Animal {
+            #weight;
+            constructor(name, age, weight){
+                super(name, age);
+                this.#weight = weight;
+            }
+            getWeight(){
+                return this.#weight;
+            }
+            setWeight(weight){
+                this.#weight = weight;
+            }
+        }
+
+        const myCate = new Cat('Wihiskers', 5, '5kg');
+        console.log(myCate.getWeight()) //5kg
+        myCate.setWeight('6kg');
+        console.log(myCate.getWeight()) //6kg
+
+        //Polymorphism
+        
+
+
+
+    </script>
+
+</body>
+
+</html>
