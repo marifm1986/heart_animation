@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 1rem;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 100px;
+    border-bottom: 1px solid #000;
+    .title{
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+.scroll_content{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: calc(100vh - 132px);
+    .scroll_item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        &:nth-child(odd){
+            background-color: #f0f0f0;
+        }
+    }
+}
