@@ -73,3 +73,8 @@ body {
         opacity: 0
     }
 }
+
+code{
+    background: red;
+    padding: .5rem;
+}

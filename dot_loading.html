@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        span {
+            font-size: 60px;
+        }
+
+        span {
+            animation: loading 1.4s infinite ease-in-out;
+            &:nth-child(1) {
+                animation-delay: -0.32s;
+            }
+            &:nth-child(2) {
+                animation-delay: -0.16s;
+            }
+        }
+
+        @keyframes loading {
+
+            0%,
+            80%,
+            100% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+</body>
+
+</html>
