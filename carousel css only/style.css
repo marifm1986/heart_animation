@@ -1,0 +1,61 @@
+body {
+    background: #212121;
+}
+
+.carousel {
+    margin: 3rem auto;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel::scroll-button(right) {
+    content: '→';
+    border: none;
+    background: purple;
+    font-size: 2rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+}
+
+.carousel::scroll-button(left) {
+    content: '←';
+    border: none;
+    background: purple;
+    font-size: 2rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+}
+
+.card {
+    display: flex;
+    flex: 0 0 20rem;
+    height: 12rem;
+    background: #292929;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+    align-items: center;
+    scroll-snap-align: start;
+}

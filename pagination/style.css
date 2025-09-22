@@ -1,0 +1,15 @@
+.numbers {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    span{
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        &.active{
+            background-color: #007bff;
+            color: white;
+        }
+    }
+}

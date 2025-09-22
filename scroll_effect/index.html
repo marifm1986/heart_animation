@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Effet Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1d1f33, #1a1e3a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .scroll-list__wrp {
+            width: 360px;
+            height: 460px;
+            overflow-y: scroll;
+            background: linear-gradient(to bottom, #14213d, #1a1e3a);
+            border-radius: 16px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .scroll-list__wrp::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-list__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            height: 80px;
+            margin: 25px;
+            transition: all 1.5s ease;
+            background: linear-gradient(to bottom, #3a86ff, #265cc5);
+            border-radius: 12px;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out, box-shadow 0.2s ease, border 0.2s ease;
+            transform: scale(0.5);
+            opacity: 0.2;
+            border: 2px solid transparent;
+        }
+
+        .scroll-list__item.active {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-list__wrp" id="scrollList">
+        <div class="scroll-list__item">1</div>
+        <div class="scroll-list__item">2</div>
+        <div class="scroll-list__item">3</div>
+        <div class="scroll-list__item">4</div>
+        <div class="scroll-list__item">5</div>
+        <div class="scroll-list__item">6</div>
+        <div class="scroll-list__item">7</div>
+        <div class="scroll-list__item">8</div>
+        <div class="scroll-list__item">9</div>
+        <div class="scroll-list__item">10</div>
+    </div>
+    <script>
+        const scrollContainer = document.getElementById("scrollList");
+        const items = scrollContainer.querySelectorAll(".scroll-list__item");
+
+        function updateEffects() {
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const containerCenter = containerRect.top + containerRect.height / 2;
+            items.forEach(item => {
+                const itemRect = item.getBoundingClientRect();
+                const itemCenter = itemRect.top + itemRect.height / 2;
+                const distance = Math.abs(containerCenter - itemCenter);
+                const ratio = Math.max(0, 1 - distance / (containerRect.height / 2));
+                item.style.transform = `scale(${0.5 + ratio * 0.7})`;
+                item.style.opacity = 0.2 + ratio * 0.8;
+                ratio > 0.95 ? item.classList.add("active") : item.classList.remove("active");
+            });
+        }
+
+        scrollContainer.addEventListener("scroll", updateEffects);
+        window.addEventListener("load", updateEffects);
+    </script>
+</body>
+
+</html>
